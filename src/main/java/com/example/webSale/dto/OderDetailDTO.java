@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Oder_detailDTO extends AbstractDto{
+public class OderDetailDTO extends AbstractDto{
     private int quantity;
     private float price;
 }

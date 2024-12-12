@@ -1,11 +1,12 @@
 package com.example.webSale.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,8 +14,8 @@ import java.util.Date;
 @Table(schema = "dbo",name = "cart")
 @Getter
 @Setter
-public class Cart extends BaseEntity implements Serializable {
+public class CartEntity extends BaseEntity implements Serializable {
     @Column(name = "add_date")
-    private Date add_date;
+    private Date addDate;
 
 }

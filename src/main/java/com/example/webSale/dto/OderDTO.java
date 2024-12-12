@@ -6,6 +6,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class OderDTO extends AbstractDto{
-    private int oder_date;
-    private String adderss;
+    private int oderDate;
+    private String address;
 }

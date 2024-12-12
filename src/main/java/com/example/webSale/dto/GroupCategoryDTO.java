@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Group_categoryDTO extends AbstractDto{
+public class GroupCategoryDTO extends AbstractDto{
     private String name;
     private int status;
 }

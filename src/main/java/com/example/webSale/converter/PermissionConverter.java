@@ -2,23 +2,23 @@ package com.example.webSale.converter;
 
 import com.example.webSale.dto.PermissionDTO;
 
-import com.example.webSale.entity.Permission;
+import com.example.webSale.entity.PermissionEntity;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PermissionConverter {
 
-    public PermissionDTO toDTO(Permission permission){
+    public PermissionDTO toDTO(PermissionEntity permissionEntity){
         PermissionDTO dto = new PermissionDTO();
-        dto.setId(permission.getId());
-        dto.setName(permission.getName());
+        dto.setId(permissionEntity.getId());
+        dto.setName(permissionEntity.getName());
         return dto;
     }
 
-    public Permission toEntity(PermissionDTO dto){
-      Permission permission = new Permission();
-      permission.setId(dto.getId());
-      permission.setName(dto.getName());
-      return permission;
+    public PermissionEntity toEntity(PermissionDTO dto){
+      PermissionEntity permissionEntity = new PermissionEntity();
+      permissionEntity.setId(dto.getId());
+      permissionEntity.setName(dto.getName());
+      return permissionEntity;
     }
 }

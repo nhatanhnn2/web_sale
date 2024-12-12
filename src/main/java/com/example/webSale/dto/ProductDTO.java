@@ -11,7 +11,7 @@ public class ProductDTO extends AbstractDto{
     private int quantity;
     private String code;
     private String description;
-    private float price_sale;
+    private float priceSale;
     private int status;
     private String image;
 }

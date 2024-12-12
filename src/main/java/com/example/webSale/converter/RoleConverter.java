@@ -1,25 +1,23 @@
 package com.example.webSale.converter;
 
 import com.example.webSale.dto.RoleDTO;
-import com.example.webSale.dto.UsersDTO;
-import com.example.webSale.entity.Role;
-import com.example.webSale.entity.Users;
+import com.example.webSale.entity.RoleEntity;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RoleConverter {
 
-    public RoleDTO toDTO(Role role){
+    public RoleDTO toDTO(RoleEntity roleEntity){
         RoleDTO dto = new RoleDTO();
-        dto.setId(role.getId());
-        dto.setName(role.getName());
+        dto.setId(roleEntity.getId());
+        dto.setName(roleEntity.getName());
         return dto;
     }
 
-    public Role toEntity(RoleDTO dto){
-      Role role = new Role();
-      role.setId(dto.getId());
-      role.setName(dto.getName());
-      return role;
+    public RoleEntity toEntity(RoleDTO dto){
+      RoleEntity roleEntity = new RoleEntity();
+      roleEntity.setId(dto.getId());
+      roleEntity.setName(dto.getName());
+      return roleEntity;
     }
 }

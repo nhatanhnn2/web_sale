@@ -1,18 +1,19 @@
 package com.example.webSale.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
 @Table(schema = "dbo",name = "category")
 @Getter
 @Setter
-public class Category extends BaseEntity implements Serializable {
+public class CategoryEntity extends BaseEntity implements Serializable {
     @Column(name = "name")
     private String name;
 

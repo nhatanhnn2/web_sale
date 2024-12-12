@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Group_permissionDTO extends AbstractDto{
+public class GroupPermissionDTO extends AbstractDto{
     private String name;
 }
