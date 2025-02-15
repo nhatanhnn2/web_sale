@@ -11,6 +11,7 @@ public class RoleConverter {
         RoleDTO dto = new RoleDTO();
         dto.setId(roleEntity.getId());
         dto.setName(roleEntity.getName());
+        dto.setCode(roleEntity.getCode());
         return dto;
     }
 
@@ -18,6 +19,7 @@ public class RoleConverter {
       RoleEntity roleEntity = new RoleEntity();
       roleEntity.setId(dto.getId());
       roleEntity.setName(dto.getName());
+      roleEntity.setCode(dto.getCode());
       return roleEntity;
     }
 }

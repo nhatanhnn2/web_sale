@@ -9,4 +9,10 @@ public interface UsersService {
     List<UsersDTO> getAllUser();
 
     void save(UsersDTO dto);
+
+    UsersDTO create(UsersDTO dto) throws Exception;
+
+    UsersDTO findByEmail(String email);
+
+
 }

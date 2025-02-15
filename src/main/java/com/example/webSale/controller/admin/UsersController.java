@@ -11,15 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("admin")
 public class UsersController {
-    @Autowired
-    private UsersService usersService;
 
-    @GetMapping("users-list")
-    public String getAll(Model model){
-        List<UsersDTO> usersDTOS = usersService.getAllUser();
-        model.addAttribute("users",usersDTOS);
-        return "Account/AccountList";
-    }
 }

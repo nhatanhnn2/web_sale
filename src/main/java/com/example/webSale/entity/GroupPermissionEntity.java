@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(schema = "dbo",name = "group_permission")
+@Table(schema = "dbo",name = "group_pm")
 @Getter
 @Setter
 public class GroupPermissionEntity extends BaseEntity implements Serializable {

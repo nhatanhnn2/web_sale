@@ -1,0 +1,278 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body{
+  overflow-x: hidden;
+}
+.div{
+  display: block;
+}
+.ft-sp{
+  font-size: 20px;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-menu{
+  padding-top: 0 !important;
+  /*margin-top: 8px!important;*/
+}
+
+.dropdown>.dropdown-toggle:active {
+  pointer-events: none;
+}
+.dropdown-toggle::after{
+  content: none!important;
+}
+.btn-b{
+  border: none;
+}
+div ul li.list-header{
+  list-style: none;
+  display: inline;
+  /*float: left;*/
+}
+.navbar-light{
+  background-color: #f02904 !important;
+}
+#carouselExampleIndicators{
+  margin-top:0px !important;
+}
+.tong{
+  position: relative;
+}
+.layer1{
+  width: 100%;
+  height: 326px;
+  position: absolute;
+  z-index: 1;
+}
+.layer2{
+  width: 100%;
+  height: 326px;
+  position: absolute;
+  background-image: -webkit-linear-gradient(top,rgba(255,255,255,0.2) 58%,rgba(253,18,0,0.99) 100%);
+  z-index: 2;
+}
+.layer3{
+  width: 100%;
+  height: 326px;
+  padding-top: 47%;
+  padding-left: 10px;
+  z-index: 2;
+  color: white;
+  font-size: 25px;
+}
+.layer3:hover,.layer33:hover{
+  color: white;
+}
+.layer11{
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  z-index: 1;
+}
+.layer22{
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  background-image: -webkit-linear-gradient(top,rgba(255,255,255,0.2) 58%,rgba(253,18,0,0.99) 100%);
+  z-index: 2;
+}
+.layer33{
+  width: 100%;
+  height: 150px;
+  padding-top: 38%;
+  padding-left: 10px;
+  z-index: 2;
+  color: white;
+  font-size: 13px;
+}
+.navbar{
+  z-index: 999999999;
+  width: 100%;
+}
+
+.list-group-item{
+  border: none;
+  background-color: #fcb71e;
+  color: black;
+  font-size: 13px;
+}
+.img-fluid{
+  width: 100% !important;
+  height: 430px;
+}
+.list-group-item:hover{
+  color: white;
+}
+.row1{
+  padding-left: 100px;
+}
+
+.img-header{
+  padding-left: 120px;
+  height: 90px;
+  width: 350px;
+}
+
+.itemft a{
+  height: 32px;
+  color: black;
+}
+.head1{
+  height: 40px;
+  background-color:#ececec;
+}
+nav div a:hover{
+  color: #2e9ad0 !important;
+}
+div ul li a.font{
+  color: white !important;
+  font-weight: bold;
+}
+nav a.padding{
+  color: white !important;
+  font-weight: bold;
+}
+nav .nav-link:hover{
+  color: #0000cc !important;
+}
+.nav-header{
+  height: 40px;
+}
+.rows{
+  padding-left: 60px;
+}
+.rows2{
+  padding-left: 30px;
+}
+.head3{
+  height: 40px;
+}
+.can{
+  display: flex;
+  padding-left: 180px;
+}
+.nav-link{
+  color: black !important;
+  list-style: none !important;
+}
+div#bodernone{
+  border: none;
+}
+ul.list1 li{
+  display:inline;
+}
+.fontC{
+  color: black;
+}
+.fontA{
+  color: white;
+  font-weight: bold;
+}
+.hotline{
+  float: left;
+  flex: 1 0;
+}
+.imgft{
+  height: 250px;  
+}
+.img1{
+  padding-top: 5%;
+  height: 80px;
+  width: 100px;
+}
+.fontB{
+  color:#fcb71e ;
+}
+.fontB:hover{
+  text-decoration: none;
+}
+.buttonBd{
+  width: 100%;
+}
+.col-left{
+  width: 100%;
+  padding-left: 0px;
+}
+.rowcustom{
+  height: 150px;
+}
+.tex1{
+  padding-left: 0px;
+}
+.tex1 a{
+  font-size: 13px;
+  color: black;
+}
+.text-ft p{
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
+}
+.text-ft a:hover{
+  text-decoration: none;
+}
+.img-ft{
+  height: 150px;
+  width: 150px;
+}
+.list-group-item{
+  border: none;
+  border-bottom:1px solid #ccc;
+  background-color: #fffad5;
+  color: black;
+}
+ul li a.col-body{
+  display: block;
+  width: 100%;
+  clear: both;
+  padding: 10px 0;
+  border-bottom: 1px solid #dcdcdc;
+  position: relative
+}
+@media (min-width: 300px) and (max-width: 650.98px) {
+  nav .padding {
+    padding-left: 0px;
+  }
+  .img-fluid{
+    width: 100% !important;
+    height: 200px;
+  }
+  .img-header{
+    width: 100%;
+    padding-left: 0px;
+  }
+  .nav-header{
+    height: 50px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+
+}
+
+@media (min-width: 1500px)  and (max-width: 1799.98px) {
+
+
+}
+
+
+@media (min-width: 1800px)   {
+
+}
+
+

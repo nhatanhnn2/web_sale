@@ -11,7 +11,6 @@ public class UsersConverter {
         UsersDTO dto = new UsersDTO();
         dto.setId(usersEntity.getId());
         dto.setName(usersEntity.getName());
-        dto.setAddress(usersEntity.getAddress());
         dto.setPhone(usersEntity.getPhone());
         dto.setEmail(usersEntity.getEmail());
         dto.setAvatar(usersEntity.getAvatar());
@@ -24,7 +23,6 @@ public class UsersConverter {
         usersEntity.setId(dto.getId());
         usersEntity.setEmail(dto.getEmail());
         usersEntity.setName(dto.getName());
-        usersEntity.setAddress(dto.getAddress());
         usersEntity.setPhone(dto.getPhone());
         usersEntity.setAvatar(dto.getAvatar());
         usersEntity.setGender(dto.getGender());

@@ -10,4 +10,7 @@ public interface RoleService {
     List<RoleDTO> getAllRole();
 
     void save(RoleDTO dto);
+
+    List<String> findAllPermissionByRole(Long roleId);
+
 }

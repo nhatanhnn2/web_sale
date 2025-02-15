@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VnPost | Đăng nhập</title>
+    <title>Đăng nhập</title>
+
 
 </head>
 
@@ -53,6 +54,7 @@
 
 <!-- Footer -->
 <!-- Bootstrap core JavaScript -->
+
 
 
 </body>

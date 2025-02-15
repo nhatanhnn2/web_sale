@@ -1,0 +1,232 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  text-decoration: none ;
+}
+.bg-dark{
+  background-color:white !important ;
+}
+.navbar{
+  z-index: 999999999;
+  width: 100%;
+}
+.conten{
+  height: 100px;
+}
+.itemft{
+  height: 32px;
+}
+.pb-cmnt-container {
+  font-family: Tahoma;
+}
+
+.pb-cmnt-textarea {
+  margin-top: 10px;
+  resize: none;
+  padding: 20px;
+  height: 130px;
+  width: 100%;
+  border: 1px solid #F2F2F2;
+}
+.nav-link{
+  color: black !important;
+  list-style: none !important;
+}
+
+a .clearfix{
+  color: black;
+}
+
+.list-group-item{
+  border: none;
+  border-bottom:1px solid #ccc;
+  background-color: #fffad5;
+  color: black;
+}
+.head-top{
+  background-color: #f02904;
+}
+.cate-body{
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+.head-top a{
+  font-size: 13px;
+  color: #1b1e21;
+}
+.head-top a:hover{
+  text-decoration: none;
+}
+.head-top a b{
+  font-size: 14px;
+  color: #0f74a8;
+}
+.list-group-itemft{
+  background-color:#fcb71e ;
+  color: black;
+  border: none;
+  font-size: 13px;
+}
+.img-fluid{
+  width: 100% !important;
+  height: 430px;
+}
+.list-group-item:hover{
+  color: #fcb71e;
+}
+.boder-none{
+  border: none;
+}
+.row1{
+  padding-left: 100px;
+}
+
+.fontC:hover{
+  color:#fcb71e !important;
+}
+
+.menu2{
+  padding-right: 380px;
+}
+
+.head1{
+  height: 40px;
+  background-color:#ececec;
+ 
+}
+.rows{
+  padding-left: 60px;
+}
+.rows a:hover{
+  color: #0000cc;
+}
+.rows2{
+  padding-left: 30px;
+}
+.head3{
+  height: 40px;
+  background-color: #fcb71e;
+}
+/*nav .padding{*/
+/*  padding-left:180px;*/
+/*}*/
+nav .padding .nav-item {
+  padding-left: 30px;
+}
+div ul li a.font{
+  color: white !important;
+  font-weight: bold;
+}
+
+nav a.padding{
+  color: white !important;
+  font-weight: bold;
+}
+.can{
+  display: flex;
+  padding-left: 180px;
+}
+.nav-link{
+  color: black !important;
+  list-style: none !important;
+}
+div#bodernone{
+  border: none;
+}
+ul.list1 li{
+  display:inline;
+}
+.fontC{
+  color: black;
+}
+.fontA{
+  color: white;
+  font-weight: bold;
+}
+.hotline{
+  float: left;
+  flex: 1 0;
+}
+.div{
+  display: block;
+}
+div ul li.list-header{
+  list-style: none;
+  display: inline;
+  float: left;
+}
+
+#carouselExampleIndicators{
+  margin-top:0px !important;
+
+}
+nav .nav-link:hover{
+  color: #0000cc !important;
+}
+.navbar{
+  z-index: 999999999;
+  width: 100%;
+}
+.img-header{
+  padding-left: 120px;
+  height: 90px;
+  width: 350px;
+}
+.border-respon{
+  border-top-style: hidden ;
+  border-bottom-style: hidden;
+}
+.nav-header{
+  height: 40px;
+}
+@media (min-width: 300px) and (max-width: 650.98px) {
+  nav .padding {
+    padding-left: 0px;
+  }
+  .img-header{
+    width: 100%;
+    padding-left: 0px;
+  }
+  .nav-header{
+    height: 50px;
+  }
+  .border-respon{
+    border-top-style: solid ;
+    border-bottom-style: solid;
+  }
+
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+
+}
+
+@media (min-width: 1500px)  and (max-width: 1799.98px) {
+
+
+}
+
+
+@media (min-width: 1800px)   {
+
+}
+
+
+

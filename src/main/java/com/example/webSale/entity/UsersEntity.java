@@ -19,13 +19,11 @@ public class UsersEntity extends BaseEntity implements Serializable {
     @Column(name = "avatar")
     private String avatar;
     @Column(name = "gender")
-    private String gender;
+    private Integer gender;
     @Column(name = "password")
     private String password;
     @Column(name = "name")
     private String name;
-    @Column(name = "address")
-    private String address;
     @Column(name = "status")
     private Integer status;
 

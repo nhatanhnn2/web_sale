@@ -7,10 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class GroupPermissionConverter {
 
-    public GroupPermissionDTO toDTO(GroupPermissionEntity group_permission){
+    public GroupPermissionDTO toDTO(GroupPermissionEntity groupPermission){
         GroupPermissionDTO dto = new GroupPermissionDTO();
-        dto.setId(group_permission.getId());
-        dto.setName(group_permission.getName());
+        dto.setId(groupPermission.getId());
+        dto.setName(groupPermission.getName());
+        dto.setCode(groupPermission.getCode());
         return dto;
     }
 
@@ -18,6 +19,7 @@ public class GroupPermissionConverter {
       GroupPermissionEntity groupPermissionEntity = new GroupPermissionEntity();
         groupPermissionEntity.setId(dto.getId());
         groupPermissionEntity.setName(dto.getName());
+        groupPermissionEntity.setCode(dto.getCode());
         return groupPermissionEntity;
     }
 }

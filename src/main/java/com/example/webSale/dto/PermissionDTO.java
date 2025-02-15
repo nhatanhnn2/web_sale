@@ -7,4 +7,5 @@ import lombok.Setter;
 @Getter
 public class PermissionDTO extends AbstractDto{
     private String name;
+    private String code;
 }
