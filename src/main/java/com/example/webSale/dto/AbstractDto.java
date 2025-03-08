@@ -14,7 +14,6 @@ public abstract class AbstractDto {
     private Date createdDate;
     private Date modifiedDate;
     private Integer page;
-    private Integer limit;
-    private Integer totalPage;
-    private Integer totalItem;
+    private Integer pageSize;
+
 }

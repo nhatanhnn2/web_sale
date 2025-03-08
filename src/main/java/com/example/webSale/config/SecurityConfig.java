@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/admin").hasAnyAuthority(AuthoritiesConstants.SUPER,AuthoritiesConstants.SYS,AuthoritiesConstants.SP,AuthoritiesConstants.SYS_USER,AuthoritiesConstants.SP_PRD)
+                .antMatchers("/admin/**").hasAnyAuthority(AuthoritiesConstants.SUPER,AuthoritiesConstants.SYS,AuthoritiesConstants.SP,AuthoritiesConstants.SYS_USER,AuthoritiesConstants.SP_PRD)
                 .antMatchers("/admin/category/**").hasAnyAuthority(AuthoritiesConstants.AD_PRD)
                 .antMatchers("/admin/new/**").hasAnyAuthority(AuthoritiesConstants.NEW)
                 .antMatchers("/admin/api/new/**").hasAnyAuthority(AuthoritiesConstants.NEW);

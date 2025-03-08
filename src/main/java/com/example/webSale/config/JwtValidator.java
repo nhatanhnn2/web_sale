@@ -3,6 +3,7 @@ package com.example.webSale.config;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,6 +23,7 @@ import java.util.List;
 
 @Component
 @ConfigurationPropertiesScan
+@Slf4j
 public class JwtValidator extends OncePerRequestFilter{
 
     @Value("${SECRET_KEY}")
@@ -49,6 +51,7 @@ public class JwtValidator extends OncePerRequestFilter{
                 Authentication authentication = new UsernamePasswordAuthenticationToken(username, null, auth);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             } catch (Exception e) {
+                log.error("failed on set user authentication", e);
             }
         }
 

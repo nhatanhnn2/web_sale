@@ -1,14 +1,16 @@
 package com.example.webSale.service;
 
+import com.example.webSale.dto.ResponseDTO;
 import com.example.webSale.dto.UsersDTO;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 public interface UsersService {
 
-    List<UsersDTO> getAllUser();
+    ResponseDTO<UsersDTO> getAllUser(UsersDTO dto);
 
-    void save(UsersDTO dto);
+    UsersDTO update(UsersDTO dto)throws Exception;
 
     UsersDTO create(UsersDTO dto) throws Exception;
 
