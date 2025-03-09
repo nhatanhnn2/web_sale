@@ -65,7 +65,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().formLogin().loginPage("/dang-nhap").usernameParameter("j_username").passwordParameter("j_password")
                 .loginProcessingUrl("/j_spring_security_check")
                 .successHandler(customSuccessHandler)
-                .failureUrl("/dang-nhap?incorrectAccount").permitAll()
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/").invalidateHttpSession(true);
         // Remember Me.
         http.addFilterBefore(new JwtValidator(SECRET_KEY), BasicAuthenticationFilter.class)

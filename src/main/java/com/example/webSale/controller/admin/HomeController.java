@@ -10,13 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Collection;
 
 @Controller(value = "admin")
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class HomeController {
-    @GetMapping()
+    @GetMapping("/home")
     public ModelAndView homeAdmin(){
         ModelAndView mav = new ModelAndView("admin/home");
-        Collection<GrantedAuthority> authorities = SecurityUtils.getPrincipal().getAuthorities();
-        mav.addObject("roles", authorities);
         return mav;
     }
 }

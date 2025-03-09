@@ -10,31 +10,21 @@
     <meta name="author" content="">
 
     <title>Đăng nhập</title>
-
-
 </head>
-
 <body>
-
-
 <div class="container" style="height: 64%">
     <div class="card card-login mx-auto mt-5"  style="width: 600px">
         <div class="card-header">Login</div>
         <div class="card-body">
-            <c:if test="${param.incorrectAccount != null}">
-                <div class="alert alert-danger">
-                    Đăng nhập thất bại!
-                </div>
-            </c:if>
-            <form action="/j_spring_security_check" method="post">
+            <form id="loginForm" action="/j_spring_security_check" method="post">
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" class="form-control" name="j_username" placeholder="Email" required="required">
+                        <input type="text" class="form-control" name="email" placeholder="Email" required="required">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" name="j_password" class="form-control" placeholder="Password">
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">
@@ -56,7 +46,9 @@
 <!-- Bootstrap core JavaScript -->
 
 
+<script src="/js/login.js" type="text/javascript"></script>
 
 </body>
+
 
 </html>

@@ -25,7 +25,7 @@ public class UsersApi {
         return usersService.update(usersDto);
     }
 
-    @PostMapping("/list")
+    @GetMapping("/list")
     public ResponseEntity<ResponseDTO<UsersDTO>> listUser(@RequestBody UsersDTO usersDto){
         return new ResponseEntity<>(usersService.getAllUser(usersDto), HttpStatus.OK);
     }

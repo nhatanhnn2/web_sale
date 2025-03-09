@@ -50,13 +50,6 @@ public class UsersServiceImpl implements UsersService {
         responseDTO.setTotalPage((int)Math.ceil((double)pageUser.getTotalElements() / responseDTO.getLimit()));
         responseDTO.setPage(dto.getPage());
         responseDTO.setListData(dtos);
-//        List<UsersDTO> usersDTOList = usersRepo.findAll().stream().map(item -> converter.toDTO(item)).collect(Collectors.toList());
-//        List<UsersDTO> usersDTOS = new ArrayList<>();
-//        List<UsersEntity> users = usersRepo.findAll();
-//        for(UsersEntity item : users){
-//            UsersDTO dto = converter.toDTO(item);
-//            usersDTOS.add(dto);
-//        }
         return responseDTO;
     }
 
