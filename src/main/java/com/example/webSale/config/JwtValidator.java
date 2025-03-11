@@ -1,9 +1,12 @@
 package com.example.webSale.config;
 
+import com.example.webSale.dto.MyUser;
+import com.example.webSale.service.impl.CustomUserDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,6 +28,8 @@ import java.util.List;
 @ConfigurationPropertiesScan
 @Slf4j
 public class JwtValidator extends OncePerRequestFilter{
+    @Autowired
+    private CustomUserDetailsService customUserDetailsService;
 
     @Value("${SECRET_KEY}")
     private final String SECRET_KEY;
@@ -46,10 +51,11 @@ public class JwtValidator extends OncePerRequestFilter{
 
                 String username = String.valueOf(claims.get("username"));
                 String authorities = String.valueOf((claims.get("authorities")));
-
+                MyUser myUser = (MyUser) customUserDetailsService.loadUserByUsername(username);
                 List<GrantedAuthority> auth = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
-                Authentication authentication = new UsernamePasswordAuthenticationToken(username, null, auth);
+                Authentication authentication = new UsernamePasswordAuthenticationToken(myUser, null, auth);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
+                filterChain.doFilter(request,response);
             } catch (Exception e) {
                 log.error("failed on set user authentication", e);
             }

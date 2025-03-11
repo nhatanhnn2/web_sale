@@ -15,7 +15,7 @@ public class AuthLoginDTO {
 
     private String jwt;
 
-    private List<String> roles;
+    private String redirectUrl;
 
 
 }

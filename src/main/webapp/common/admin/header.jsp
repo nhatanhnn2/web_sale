@@ -20,7 +20,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
-            <a style="color: white">Hello , <%=SecurityUtils.getPrincipal().getName()%></a>
+            <a style="color: white">Hello , <%=SecurityUtils.getPrincipal().getEmail()%></a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<c:url value='/admin/user/edit-profile/${emailPw}'/>"><i class="far fa-id-card"></i> Edit Profile</a>

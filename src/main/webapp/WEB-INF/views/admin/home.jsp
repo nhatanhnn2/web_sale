@@ -12,5 +12,18 @@
 </head>
 <body  id="page-top">
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajaxSetup({
+            beforeSend: function (xhr) {
+                const token = localStorage.getItem("access-token");
+                if (token) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                }
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

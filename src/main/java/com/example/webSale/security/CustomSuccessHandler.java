@@ -1,6 +1,8 @@
 package com.example.webSale.security;
 
+import com.example.webSale.service.RoleService;
 import com.example.webSale.utils.SecurityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
@@ -13,30 +15,13 @@ import java.io.IOException;
 import java.util.List;
 
 @Component
-public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+public class CustomSuccessHandler {
+    @Autowired
+    private RoleService roleService;
 
-    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-
-    public void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
-            throws IOException {
-        String targetUrl = determineTargetUrl(authentication);
-        if (response.isCommitted()) {
-            return;
-        }
-        redirectStrategy.sendRedirect(request, response, targetUrl);
-    }
-
-    public RedirectStrategy getRedirectStrategy() {
-        return redirectStrategy;
-    }
-
-    public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
-        this.redirectStrategy = redirectStrategy;
-    }
-
-    private String determineTargetUrl(Authentication authentication) {
+    private String redirectUrl(Long roleId){
+        List<String> roles = roleService.findAllPermissionByRole(roleId);
         String url = "";
-        List<String> roles = SecurityUtils.getAuthorities();
         if (isAdmin(roles)) {
             url = "/admin";
         } else {
@@ -45,7 +30,6 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
         return url;
     }
-
     private boolean isAdmin(List<String> roles) {
         if (roles.contains("SUPER") || roles.contains("SYS") ||
                 roles.contains("SP") || roles.contains("SYS_USER")|| roles.contains("SP_NEW")) {

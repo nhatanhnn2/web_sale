@@ -15,6 +15,7 @@ public class HomeController {
     @GetMapping("/home")
     public ModelAndView homeAdmin(){
         ModelAndView mav = new ModelAndView("admin/home");
+        mav.addObject("roles", SecurityUtils.getAuthorities());
         return mav;
     }
 }

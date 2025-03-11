@@ -10,14 +10,18 @@ import java.util.Collection;
 @Setter
 public class MyUser extends User {
 
-    public MyUser(String username, String password, boolean enabled, boolean accountNonExpired,
+    public MyUser(String email, String password, boolean enabled, boolean accountNonExpired,
                   boolean credentialsNonExpired, boolean accountNonLocked,
-                  Collection<? extends GrantedAuthority> authorities) {
-        super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+                  Collection<? extends GrantedAuthority> authorities,Long id, String name) {
+        super(email, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+        this.id=id;
+        this.name=name;
     }
 
-    private String name;
+
+    private String email;
     private Long id;
+    private String name;
 
 
 }

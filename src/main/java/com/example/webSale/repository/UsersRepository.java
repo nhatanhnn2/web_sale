@@ -6,10 +6,14 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UsersRepository extends JpaRepository<UsersEntity, Long>, JpaSpecificationExecutor<UsersEntity> {
-    UsersEntity findByEmail(String email);
+    Optional<UsersEntity> findByEmail(String email);
 
-    UsersEntity findByPhone(String phone);
+    boolean existsByPhone(String phone);
+
+    boolean existsByEmail(String email);
 
 }

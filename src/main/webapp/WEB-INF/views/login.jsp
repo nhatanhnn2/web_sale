@@ -16,7 +16,7 @@
     <div class="card card-login mx-auto mt-5"  style="width: 600px">
         <div class="card-header">Login</div>
         <div class="card-body">
-            <form id="loginForm" action="/j_spring_security_check" method="post">
+            <form id="loginForm" method="post">
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="text" class="form-control" name="email" placeholder="Email" required="required">

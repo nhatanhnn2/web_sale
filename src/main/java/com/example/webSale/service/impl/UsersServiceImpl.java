@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.acls.model.NotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -57,12 +58,12 @@ public class UsersServiceImpl implements UsersService {
     public UsersDTO update(UsersDTO dto) throws Exception{
         UsersEntity entity = usersRepo.findById(dto.getId()).get();
         if (!dto.getEmail().equals(entity.getEmail())){
-            if (checkDuplicateEmail(dto.getEmail())){
+            if (usersRepo.existsByEmail(dto.getEmail())){
                 throw new Exception("Email đã tồn tại");
             }
         }
         if (!dto.getPhone().equals( entity.getPhone())){
-            if (checkDuplicatePhone(dto.getPhone())){
+            if (usersRepo.existsByPhone(dto.getPhone())){
                 throw new Exception("Sdt đã tồn tại");
             }
         }
@@ -91,38 +92,18 @@ public class UsersServiceImpl implements UsersService {
     }
 
     private void checkDuplicate(UsersDTO dto)throws Exception{
-        if (checkDuplicatePhone(dto.getEmail())){
+        if (usersRepo.existsByEmail(dto.getEmail())){
             throw new Exception("Email đã tồn tại");
         }
-        if (checkDuplicatePhone(dto.getPhone())){
+        if (usersRepo.existsByPhone(dto.getPhone())){
             throw new Exception("Sdt đã tồn tại");
         }
     }
 
     @Override
     public UsersDTO findByEmail(String email) {
-        UsersEntity usersEntity = usersRepo.findByEmail(email);
+        UsersEntity usersEntity = usersRepo.findByEmail(email).orElseThrow(() -> new NotFoundException("User not found"));
         return modelMapper.map(usersEntity,UsersDTO.class);
-    }
-
-    private Boolean checkDuplicateEmail(String email){
-        UsersEntity entity = usersRepo.findByEmail(email);
-        if (!Objects.isNull(entity)){
-            return true;
-        }else {
-            return false;
-        }
-
-    }
-
-    private Boolean checkDuplicatePhone(String phone){
-        UsersEntity entity = usersRepo.findByPhone(phone);
-        if (!Objects.isNull(entity)){
-            return true;
-        }else {
-            return false;
-        }
-
     }
 
 

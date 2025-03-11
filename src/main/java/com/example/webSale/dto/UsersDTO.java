@@ -15,4 +15,5 @@ public class UsersDTO extends AbstractDto{
     private String name;
     private Integer status;
     private Long roleId;
+
 }

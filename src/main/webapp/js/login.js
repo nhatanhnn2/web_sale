@@ -6,13 +6,31 @@ $("#loginForm").submit(function (e) {
         data["" + v.name + ""] = v.value;
     });
     $.ajax({
-        url: "/api/auth/login",
+        url: "/auth/login",
         method: "POST",
         data: JSON.stringify(data),
         contentType: "application/json",
         success: function (result) {
             localStorage.setItem("access-token", result.jwt);
-            window.location.href = "/admin/home";
+            var href = result.redirectUrl;
+            const token = localStorage.getItem("access-token");
+
+            fetch(href, {
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = href;
+                    } else {
+                        alert("Access Denied");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+
         },
         error: function (err) {
             alert("Sai tài khoản hoặc mật khẩu")

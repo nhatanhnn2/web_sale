@@ -21,7 +21,10 @@ public class SecurityUtils {
     }
 
     public static MyUser getPrincipal() {
-        MyUser myUser = (MyUser) (SecurityContextHolder.getContext()).getAuthentication().getPrincipal();
-        return myUser;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof MyUser) {
+            return (MyUser) principal;
+        }
+        return null;
     }
 }
