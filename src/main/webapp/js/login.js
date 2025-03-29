@@ -12,9 +12,9 @@ $("#loginForm").submit(function (e) {
         contentType: "application/json",
         success: function (result) {
             localStorage.setItem("access-token", result.jwt);
-            var href = result.redirectUrl;
+            // window.location.href = result.redirectUrl;
             const token = localStorage.getItem("access-token");
-
+            const href = result.redirectUrl;
             fetch(href, {
                 method: "GET",
                 headers: {

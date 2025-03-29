@@ -6,6 +6,7 @@ import com.example.webSale.entity.PermissionEntity;
 import com.example.webSale.entity.RoleEntity;
 import com.example.webSale.repository.RoleRepository;
 import com.example.webSale.service.RoleService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +20,18 @@ import java.util.stream.Collectors;
 public class RoleServiceImpl implements RoleService {
 
     @Autowired
-    private RoleRepository repository;
+    private RoleRepository roleRepo;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Override
     public List<RoleDTO> getAllRole() {
-        return null;
+       return roleRepo.findAll()
+                .stream()
+                .map(roleEntity1 -> modelMapper.map(roleEntity1, RoleDTO.class))
+                .collect(Collectors.toList());
+
     }
 
     @Override
@@ -34,7 +42,7 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public List<String> findAllPermissionByRole(Long roleId) {
         Set<String> permission = new HashSet<>();
-        RoleEntity roleEntity = repository.findById(roleId).get();
+        RoleEntity roleEntity = roleRepo.findById(roleId).get();
         permission.add(roleEntity.getCode());
         for (GroupPermissionEntity groupPermissionEntity : roleEntity.getGroupPmEntities()){
             permission.add(groupPermissionEntity.getCode());

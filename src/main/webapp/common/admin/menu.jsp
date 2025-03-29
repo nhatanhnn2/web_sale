@@ -3,13 +3,13 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="<c:url value="/admin"/>">
+                <a class="nav-link" href="<c:url value="/admin/home"/>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="<c:url value='/admin/new/list?page=1&limit=3'/>">&nbsp;Danh sách bài viết</a>
+                <a class="nav-link" href="<c:url value='/admin/blog/list'/>">&nbsp;Danh sách bài viết</a>
                 <a class="nav-link" href="<c:url value='/admin/comment/list?page=1&limit=10'/>">&nbsp;Comment</a>
                 <c:forEach items="${roles}" var="item">
                     <c:if test="${item == 'AD_PRD'}">

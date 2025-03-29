@@ -23,14 +23,13 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class UsersServiceImpl implements UsersService {
     @Autowired
     private UsersRepository usersRepo;
-    @Autowired
-    private UsersConverter converter;
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
     @Autowired
@@ -85,7 +84,9 @@ public class UsersServiceImpl implements UsersService {
         checkDuplicate(dto);
         UsersEntity entity = modelMapper.map(dto,UsersEntity.class);
         entity.setPassword(passwordEncoder.encode(Constant.defaultPassword));
-        RoleEntity roleEntity = roleRepository.findById(dto.getRoleId()).get();
+        RoleEntity roleEntity = roleRepository.findById(dto.getRoleId())
+                .orElseThrow(() -> new Exception("Role không tồn tại!"));
+        System.out.println("Role ID nhận được: " + dto.getRoleId());
         entity.setRoleId(roleEntity);
         usersRepo.save(entity);
         return  dto;
@@ -104,6 +105,13 @@ public class UsersServiceImpl implements UsersService {
     public UsersDTO findByEmail(String email) {
         UsersEntity usersEntity = usersRepo.findByEmail(email).orElseThrow(() -> new NotFoundException("User not found"));
         return modelMapper.map(usersEntity,UsersDTO.class);
+    }
+
+    @Override
+    public UsersDTO findById(Long id) {
+        UsersEntity usersEntity = usersRepo.findById(id).orElseThrow(() -> new NotFoundException("User not found"));
+        UsersDTO dto = modelMapper.map(usersEntity,UsersDTO.class);
+        return dto;
     }
 
 

@@ -1,9 +1,9 @@
 <%@ page import="com.example.webSale.utils.SecurityUtils" %>
 <%@ page pageEncoding="UTF-8" %>
-<c:url var="emailPw" value="<%=SecurityUtils.getPrincipal().getUsername()%>"/>
+<c:url var="email" value="<%=SecurityUtils.getPrincipal().getEmail()%>"/>
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="<c:url value="/admin"/>">ADMIN</a>
+    <a class="navbar-brand mr-1" href="<c:url value="/admin/home"/>">ADMIN</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -20,10 +20,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
-            <a style="color: white">Hello , <%=SecurityUtils.getPrincipal().getEmail()%></a>
+            <a style="color: white">Hello , <%=SecurityUtils.getPrincipal().getName()%></a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<c:url value='/admin/user/edit-profile/${emailPw}'/>"><i class="far fa-id-card"></i> Edit Profile</a>
+                <a class="dropdown-item" href="<c:url value='/admin/user/edit-profile/${email}'/>"><i class="far fa-id-card"></i> Edit Profile</a>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#passwordModal"><i class="ace-icon fa fa-key"></i> Change PassWord</a>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="ace-icon fa fa-power-off"></i> Logout</a>
             </div>

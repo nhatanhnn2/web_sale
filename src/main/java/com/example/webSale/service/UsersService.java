@@ -2,9 +2,8 @@ package com.example.webSale.service;
 
 import com.example.webSale.dto.ResponseDTO;
 import com.example.webSale.dto.UsersDTO;
-import org.springframework.data.domain.Page;
 
-import java.util.List;
+import java.util.Optional;
 
 
 public interface UsersService {
@@ -16,6 +15,8 @@ public interface UsersService {
     UsersDTO create(UsersDTO dto) throws Exception;
 
     UsersDTO findByEmail(String email);
+
+    UsersDTO findById(Long id);
 
 
 }

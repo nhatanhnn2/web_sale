@@ -16,6 +16,7 @@ public class MyUser extends User {
         super(email, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
         this.id=id;
         this.name=name;
+        this.email = email;
     }
 
 

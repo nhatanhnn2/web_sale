@@ -26,8 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${SECRET_KEY}")
     private String SECRET_KEY;
 
-    private final String[] PUBLIC_FOLDER  = {"/js/**","/common/**","/css/**"};
-    private final String[] PUBLIC_URL  = {"/dang-nhap","/trang-chu","/auth/**"};
+    private final String[] PUBLIC_FOLDER  = {"/js/**","/common/**","/css/**","/decorators/**"};
+    private final String[] PUBLIC_URL  = {"/dang-nhap","/trang-chu","/auth/**","/admin/**"};
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
@@ -50,10 +50,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(PUBLIC_FOLDER).permitAll()
                 .antMatchers(PUBLIC_URL).permitAll()
-                .antMatchers("/admin/**").hasAnyAuthority(AuthoritiesConstants.SUPER,AuthoritiesConstants.SYS,AuthoritiesConstants.SP,AuthoritiesConstants.SYS_USER,AuthoritiesConstants.SP_PRD)
-                .antMatchers("/admin/category/**").hasAnyAuthority(AuthoritiesConstants.AD_PRD)
-                .antMatchers("/admin/new/**").hasAnyAuthority(AuthoritiesConstants.NEW)
-                .antMatchers("/admin/api/new/**").hasAnyAuthority(AuthoritiesConstants.NEW)
+                .antMatchers("api/admin/**").hasAnyAuthority(AuthoritiesConstants.SUPER,AuthoritiesConstants.SYS,AuthoritiesConstants.SP,AuthoritiesConstants.SYS_USER,AuthoritiesConstants.SP_PRD)
+                .antMatchers("api/admin/category/**").hasAnyAuthority(AuthoritiesConstants.AD_PRD)
+                .antMatchers("api/admin/new/**").hasAnyAuthority(AuthoritiesConstants.NEW)
+                .antMatchers("api/admin/api/new/**").hasAnyAuthority(AuthoritiesConstants.NEW)
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new JwtValidator(SECRET_KEY), UsernamePasswordAuthenticationFilter.class)
@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(Collections.singletonList("*"));
+        configuration.setAllowedHeaders(Arrays.asList("*","AUTH-TOKEN"));
         configuration.setExposedHeaders(Arrays.asList("Authorization"));
         configuration.setMaxAge(3600L);
 

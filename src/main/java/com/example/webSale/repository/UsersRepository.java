@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -15,5 +16,8 @@ public interface UsersRepository extends JpaRepository<UsersEntity, Long>, JpaSp
     boolean existsByPhone(String phone);
 
     boolean existsByEmail(String email);
+
+    @Query("SELECT u FROM UsersEntity u")
+    List<UsersEntity> findAllUsers();
 
 }

@@ -13,7 +13,29 @@
 <body  id="page-top">
 <div class="container">
     <h2>Danh sách tài khoản</h2>
-    <button id="search-user">Tìm kiếm</button>
+    <div class="row">
+        <div class="col row">
+            <div class="col">
+                <input type="text" placeholder="tìm kiếm tên" id="search-name">
+            </div>
+
+<%--            <div class="dropdown col">--%>
+<%--                <button class="btn btn-secondary dropdown-toggle" type="button" id="search-status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
+<%--                   Trạng thái--%>
+<%--                </button>--%>
+<%--                <div class="dropdown-menu" aria-labelledby="search-status">--%>
+<%--                    <a class="dropdown-item" value="1">Đang hoạt động</a>--%>
+<%--                    <a class="dropdown-item" value="0">Không hoạt động</a>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+        </div>
+        <div class="col">
+            <button id="search-user" class="float-right" >Tìm kiếm</button>
+            <button id="add-user" class="float-right fa fa-plus" style="margin-right: 10px;">Thêm Tài Khoản</button>
+        </div>
+
+    </div>
+
     <table class="table">
         <thead>
         <tr>
@@ -22,16 +44,11 @@
             <th>Số điện thoại</th>
             <th>Giới tính</th>
             <th>Trạng thái</th>
+            <th></th>
+<%--            <th></th>--%>
         </tr>
         </thead>
         <tbody id="list-user">
-<%--        <tr>--%>
-<%--            <td>admin product</td>--%>
-<%--            <td>admin2@gmail.com</td>--%>
-<%--            <td>123456789</td>--%>
-<%--            <td>Nam</td>--%>
-<%--            <td>Đang hoạt động</td>--%>
-<%--        </tr>--%>
         </tbody>
     </table>
 </div>
