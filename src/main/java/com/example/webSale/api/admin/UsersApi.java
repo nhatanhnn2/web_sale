@@ -22,21 +22,14 @@ public class UsersApi {
 //        return usersService.create(usersDto);
 //    }
 @PostMapping("/create")
-public String create(@ModelAttribute("user") UsersDTO userDTO, RedirectAttributes redirectAttributes) {
-    try {
-        if (userDTO.getRoleId() == null) {
-            redirectAttributes.addFlashAttribute("error", "Role ID không được để trống!");
-            return "redirect:/admin/users";
-        }
+public UsersDTO create(@RequestBody UsersDTO userDTO) throws Exception {
 
-        System.out.println("Role ID nhận được: " + userDTO.getRoleId());
 
-        usersService.create(userDTO);
-        redirectAttributes.addFlashAttribute("success", "Tạo người dùng thành công!");
-    } catch (Exception e) {
-        redirectAttributes.addFlashAttribute("error", "Có lỗi xảy ra: " + e.getMessage());
-    }
-    return "redirect:/admin/users";
+    System.out.println("Role ID nhận được: " + userDTO.getRoleId());
+
+    usersService.create(userDTO);
+
+    return usersService.create(userDTO);
 }
 
     @PutMapping()

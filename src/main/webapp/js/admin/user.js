@@ -1,5 +1,7 @@
 jQuery(function ($) {
     $(document).ready(function () {
+
+        getListUser(getDataSearch());
         function getListUser(dataSearch){
             jQuery.ajax({
                 url: "/api/admin/user/list",
@@ -63,7 +65,7 @@ jQuery(function ($) {
         function getDataSearch(){
             var data = {};
             data['page'] = 1;
-            data['pageSize'] = 2;
+            data['pageSize'] = 10;
             data['name'] = $('#search-name').val();
             data['status'] = '';
             return data;

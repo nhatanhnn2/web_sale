@@ -29,24 +29,19 @@
       </div>
       <div class="page-content">
         <div class="row">
-          <div class="col-md-12">
+          <form id="formSubmit" class="col-md-12">
+    <c:forEach items="${roles}" var="item">
+        <c:if test="${item == 'SUPER'}">
             <div class="form-group row">
               <label class="col-sm-2 control-label no-padding-right ">Quyền hạn</label>
               <div class="col-sm-9">
-                <select class="form-control userId" class="searchable-dropdown" >
-                    <option  value="admin product">admin product</option>
-                    <option id="role" value="supper admin">supper admin</option>
-                  <c:forEach var="item" items="${role}">
-                    <c:if test="${item.id == editUser.roleId}">
-                      <option value="${item.id} " selected="selected">${item.name}</option>
-                    </c:if>
-                    <c:if test="${item.id != editUser.roleId}">
-                      <option value="${item.id} ">${item.name}</option>
-                    </c:if>
-                  </c:forEach>
+                <select class="form-control userId" class="searchable-dropdown" id="roleId" name="roleId" >
+
                 </select>
               </div>
             </div>
+        </c:if>
+    </c:forEach>
 <%--            <div class="form-group row">--%>
 <%--              <label class="col-sm-2 control-label no-padding-right">Avatar</label>--%>
 <%--              <div class="col-sm-9">--%>
@@ -73,41 +68,62 @@
 <%--                </div>--%>
 <%--              </div>--%>
 
-              <div class="form-group row">
-                <label class="col-sm-2 control-label no-padding-right">Giới tính</label>
-                <div class="col-sm-9">
-                  <input type="radio" id="html" name="fav_language" value="1">
-                  <label for="html">Nam</label><br>
-                  <input type="radio" id="css" name="fav_language" value="0">
-                  <label for="css">Nữ</label><br>
-                </div>
-              </div>
+
               <div class="form-group row">
                 <label class="col-sm-2 control-label no-padding-right">Email</label>
                 <div class="col-sm-9">
-                  <input id="email" class="form-control" type="email">
+                  <input id="email" class="form-control" type="email" name="email">
                 </div>
               </div>
               <div class="form-group row">
                   <label class="col-sm-2 control-label no-padding-right">Họ Tên</label>
                   <div class="col-sm-9">
-                      <input id="name" class="form-control" type="name">
+                      <input id="name" class="form-control"  name="name">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-sm-2 control-label no-padding-right">Trạng thái</label>
+                  <div class="col-sm-9">
+                      <select class="form-control" id="status" name="status">
+                          <option selected disabled>-- Trạng thái --</option>
+                          <option value="1">Đang hoạt động</option>
+                          <option value="0">Không hoạt động</option>
+                      </select>
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-sm-2 control-label no-padding-right">Giới tính</label>
+                  <div class="col-sm-9">
+                      <select class="form-control" id="gender" name="gender">
+                          <option selected disabled>-- Giới tính --</option>
+                          <option value="1">Nam</option>
+                          <option value="0">Nữ</option>
+                      </select>
                   </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 control-label no-padding-right">Phone</label>
                 <div class="col-sm-9">
-                  <input id="phone" type="number" class="form-control">
+                  <input id="phone" type="number" name="phone" class="form-control">
                 </div>
               </div>
               <input type="hidden" id="userId" name="userId" value="${userId}">
               <div class="form-group">
                 <div class="col-sm-12">
-                  <button type="submit"  class="btn btn-white btn-warning btn-bold"  id="btnUpdateNew"/>Cập nhật
+                  <button type="submit"  class="btn btn-white btn-warning btn-bold"  id="btnUpdate"/>Cập nhật
                   <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i></button>
                 </div>
               </div>
-            </div>
+
+              <div class="form-group">
+                  <div class="col-sm-12">
+                      <button type="submit"  class="btn btn-white btn-warning btn-bold"  id="btnCreate"/>Thêm mới
+                      <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i></button>
+                  </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

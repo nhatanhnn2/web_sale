@@ -82,6 +82,9 @@ public class UsersServiceImpl implements UsersService {
     @Transactional
     public UsersDTO create(UsersDTO dto) throws Exception {
         checkDuplicate(dto);
+        if (Objects.isNull(dto.getStatus())){
+            dto.setStatus(Constant.STATUS_NON_ACTIVE);
+        }
         UsersEntity entity = modelMapper.map(dto,UsersEntity.class);
         entity.setPassword(passwordEncoder.encode(Constant.defaultPassword));
         RoleEntity roleEntity = roleRepository.findById(dto.getRoleId())
